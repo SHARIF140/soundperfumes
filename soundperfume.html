@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Soundtrack with Black Screen</title>
+    <!-- Add any necessary styles -->
+    <style>
+        body {
+            margin: 0;
+            background-color: black; /* Set background to black */
+        }
+        /* Hide the audio player visually */
+        audio {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            opacity: 0;
+            overflow: hidden;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            background-color: #fff;
+            color: #000;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Add audio tag for the soundtrack -->
+    <audio id="audioPlayer" loop>
+        <source src="waterfalls.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Button to start audio playback -->
+    <button onclick="startAudio()">Start Audio</button>
+
+    <!-- JavaScript to start the audio playback -->
+    <script>
+        function startAudio() {
+            var audio = document.getElementById('audioPlayer');
+            audio.play();
+            document.querySelector('button').style.display = 'none'; // Hide the button after playback starts
+        }
+    </script>
+</body>
+</html>
